@@ -10,6 +10,11 @@ override_dh_auto_build:
 	cargo build --release --locked
 
 override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	cargo test --release --locked
+	I3XROCKS=target/release/i3xrocks sh tests/xresource-missing.sh; \
+	  rc=$$?; [ $$rc -eq 0 ] || [ $$rc -eq 77 ]
+endif
 
 override_dh_auto_install:
 	install -D -m 0755 target/release/i3xrocks debian/i3xrocks/usr/bin/i3xrocks
