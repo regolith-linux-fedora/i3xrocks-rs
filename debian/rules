@@ -3,3 +3,14 @@ export DH_VERBOSE = 1
 
 %:
 	dh $@
+
+override_dh_auto_configure:
+
+override_dh_auto_build:
+	cargo build --release --locked
+
+override_dh_auto_test:
+
+override_dh_auto_install:
+	install -D -m 0755 target/release/i3xrocks debian/i3xrocks/usr/bin/i3xrocks
+	install -D -m 0644 i3xrocks.conf debian/i3xrocks/etc/i3xrocks.conf

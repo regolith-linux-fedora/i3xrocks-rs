@@ -1,0 +1,16 @@
+[package]
+name = "i3xrocks"
+version = "1.3.3"
+edition = "2021"
+description = "i3blocks with Xresources and conf.d configuration (Rust port)"
+license = "GPL-3.0-or-later"
+publish = false
+
+[dependencies]
+x11rb = { version = "=0.13.2", features = ["resource_manager"] }
+signal-hook = "=0.4.6"
+libc = "=0.2.191"
+nix = { version = "=0.31.3", features = ["signal", "process", "fs", "poll"] }
+
+[profile.release]
+codegen-units = 1
