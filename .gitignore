@@ -1,4 +1,6 @@
 /target/
+/vendor/
+/.cargo/
 debian/files
 debian/i3xrocks/
 debian/.debhelper/

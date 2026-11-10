@@ -1,3 +1,10 @@
+i3xrocks (1.3.7+rs1) resolute; urgency=medium
+
+  * Rust port of i3xrocks as of 1.3.7 (i3xrocks-rs). See README.md for the
+    status and the differences from upstream i3xrocks.
+
+ -- rego-port-bot <339843353+rego-port-bot@users.noreply.github.com>  Mon, 09 Nov 2026 12:00:00 +0000
+
 i3xrocks (1.3.7) bionic; urgency=medium
 
   [ rego-port-bot ]
